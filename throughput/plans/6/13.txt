@@ -1,0 +1,50 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	c_count,
+	count(*) as custdist
+from
+	(
+		select
+			c_custkey,
+			count(o_orderkey)
+		from
+			customer left outer join orders on
+				c_custkey = o_custkey
+				and o_comment not like '%pending%packages%'
+		group by
+			c_custkey
+	) as c_orders (c_custkey, c_count)
+group by
+	c_count
+order by
+	custdist desc,
+	c_count desc;
+                                                                                                            QUERY PLAN                                                                                                             
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=16692897.81..16692898.31 rows=200 width=8)
+   Sort Key: (pg_catalog.count(*)) DESC, c_count DESC
+   ->  HashAggregate  (cost=16692888.16..16692890.16 rows=200 width=8)
+         Group Key: c_count
+         ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1,datanode_3_1,datanode_4_1,datanode_5_1,datanode_6_1,datanode_7_1,datanode_8_1)  (cost=15995561.37..16617888.16 rows=15000000 width=8)
+               ->  HashAggregate  (cost=15995561.37..16617888.16 rows=200 width=8)
+                     Group Key: count(orders.o_orderkey)
+                     ->  GroupAggregate  (cost=15995561.37..16467888.16 rows=15000000 width=8)
+                           Group Key: customer.c_custkey
+                           ->  Sort  (cost=15995561.37..16103003.63 rows=42976906 width=8)
+                                 Sort Key: customer.c_custkey
+                                 ->  Hash Right Join  (cost=748861.00..9959145.32 rows=42976906 width=8)
+                                       Hash Cond: (orders.o_custkey = customer.c_custkey)
+                                       ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1,datanode_3_1,datanode_4_1,datanode_5_1,datanode_6_1,datanode_7_1,datanode_8_1)  (cost=100.00..6337703.93 rows=148439918 width=8)
+                                             Distribute results by H: o_custkey
+                                             ->  Seq Scan on orders  (cost=0.00..4407885.00 rows=148439918 width=8)
+                                                   Filter: ((o_comment)::text !~~ '%pending%packages%'::text)
+                                       ->  Hash  (cost=637867.00..637867.00 rows=15000000 width=4)
+                                             ->  Remote Subquery Scan on all (datanode_4_1)  (cost=100.00..637867.00 rows=15000000 width=4)
+                                                   Distribute results by H: c_custkey
+                                                   ->  Seq Scan on customer  (cost=0.00..502767.00 rows=15000000 width=4)
+(21 rows)
+
+COMMIT;
+COMMIT

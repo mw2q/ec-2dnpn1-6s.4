@@ -1,0 +1,11 @@
+Sat Aug 22 14:17:18 EDT 2015: Stream 5 : Starting Refresh Stream 2...
+BEGIN
+CREATE TABLE
+COPY 150000
+CREATE INDEX
+ANALYZE
+DELETE 599931
+DELETE 150000
+COMMIT
+Sat Aug 22 14:17:19 EDT 2015: Stream 5 : Refresh Stream 2 completed.
+Stream 5 : Elapsed time for Refresh Stream 2 : 1 seconds

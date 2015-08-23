@@ -1,0 +1,31 @@
+2015-08-22 12:15:29 EDT [13742]: [1-1] user=,db=,app=,client= LOG:  database system was shut down at 2015-08-22 12:14:55 EDT
+2015-08-22 12:15:29 EDT [13742]: [2-1] user=,db=,app=,client= LOG:  MultiXact member wraparound protections are now enabled
+2015-08-22 12:15:29 EDT [13741]: [1-1] user=,db=,app=,client= LOG:  database system is ready to accept connections
+2015-08-22 12:15:29 EDT [13747]: [1-1] user=,db=,app=,client= LOG:  autovacuum launcher started
+2015-08-22 12:20:29 EDT [13744]: [1-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:20:29 EDT [13744]: [2-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.225 s, sync=0.003 s, total=0.234 s; sync files=3, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=4 kB
+2015-08-22 12:25:29 EDT [13744]: [3-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:25:29 EDT [13744]: [4-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.000 s, total=0.016 s; sync files=0, longest=0.000 s, average=0.000 s; distance=3 kB, estimate=4 kB
+2015-08-22 12:30:29 EDT [13744]: [5-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:30:29 EDT [13744]: [6-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.000 s, total=0.016 s; sync files=0, longest=0.000 s, average=0.000 s; distance=3 kB, estimate=4 kB
+2015-08-22 12:35:30 EDT [13744]: [7-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:35:30 EDT [13744]: [8-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.000 s, total=0.016 s; sync files=0, longest=0.000 s, average=0.000 s; distance=3 kB, estimate=4 kB
+2015-08-22 12:40:30 EDT [13744]: [9-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:40:30 EDT [13744]: [10-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.000 s, total=0.015 s; sync files=0, longest=0.000 s, average=0.000 s; distance=3 kB, estimate=4 kB
+2015-08-22 12:45:30 EDT [13744]: [11-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:45:30 EDT [13744]: [12-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.000 s, total=0.016 s; sync files=0, longest=0.000 s, average=0.000 s; distance=3 kB, estimate=4 kB
+2015-08-22 12:50:30 EDT [13744]: [13-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:50:30 EDT [13744]: [14-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.000 s, total=0.015 s; sync files=0, longest=0.000 s, average=0.000 s; distance=4 kB, estimate=4 kB
+2015-08-22 12:55:30 EDT [13744]: [15-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:55:32 EDT [13744]: [16-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 21 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=2.017 s, sync=0.015 s, total=2.036 s; sync files=16, longest=0.002 s, average=0.000 s; distance=99 kB, estimate=99 kB
+2015-08-22 12:57:14 EDT [17298]: [1-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting relation statistics for pg_temp_2.tmp_orderkey2
+2015-08-22 12:57:14 EDT [17298]: [2-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  ANALYZE tmp_orderkey2;
+2015-08-22 12:57:14 EDT [17298]: [3-1] user=mark,db=dbt3,app=psql,client=[local] LOG:  Getting detailed statistics for pg_temp_2.tmp_orderkey2
+2015-08-22 12:57:14 EDT [17298]: [4-1] user=mark,db=dbt3,app=psql,client=[local] STATEMENT:  ANALYZE tmp_orderkey2;
+2015-08-22 12:57:17 EDT [13741]: [2-1] user=,db=,app=,client= LOG:  received fast shutdown request
+2015-08-22 12:57:17 EDT [13741]: [3-1] user=,db=,app=,client= LOG:  aborting any active transactions
+2015-08-22 12:57:17 EDT [13747]: [2-1] user=,db=,app=,client= LOG:  autovacuum launcher shutting down
+2015-08-22 12:57:17 EDT [13744]: [17-1] user=,db=,app=,client= LOG:  shutting down
+2015-08-22 12:57:17 EDT [13744]: [18-1] user=,db=,app=,client= LOG:  checkpoint starting: shutdown immediate
+2015-08-22 12:57:17 EDT [13744]: [19-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 28 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.011 s, sync=0.018 s, total=0.035 s; sync files=23, longest=0.001 s, average=0.000 s; distance=126 kB, estimate=126 kB
+2015-08-22 12:57:17 EDT [13744]: [20-1] user=,db=,app=,client= LOG:  database system is shut down

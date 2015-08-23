@@ -1,0 +1,55 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'MACHINERY'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-14'
+	and l_shipdate > date '1995-03-14'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+LIMIT 10;
+                                                                                             QUERY PLAN                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=27636576.75..27636576.77 rows=10 width=20)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1,datanode_3_1,datanode_4_1,datanode_5_1,datanode_6_1,datanode_7_1,datanode_8_1)  (cost=27636576.75..27659368.51 rows=9116706 width=20)
+         ->  Limit  (cost=27636576.75..27659368.51 rows=9116706 width=20)
+               ->  Sort  (cost=27636576.75..27659368.51 rows=9116706 width=20)
+                     Sort Key: (sum((lineitem.l_extendedprice * ('1'::double precision - lineitem.l_discount)))) DESC, orders.o_orderdate
+                     ->  GroupAggregate  (cost=27188858.59..27439568.01 rows=9116706 width=20)
+                           Group Key: lineitem.l_orderkey, orders.o_orderdate, orders.o_shippriority
+                           ->  Sort  (cost=27188858.59..27211650.36 rows=9116706 width=20)
+                                 Sort Key: lineitem.l_orderkey, orders.o_orderdate, orders.o_shippriority
+                                 ->  Hash Join  (cost=5455471.03..26134963.68 rows=9116706 width=20)
+                                       Hash Cond: (lineitem.l_orderkey = orders.o_orderkey)
+                                       ->  Seq Scan on lineitem  (cost=0.00..18157708.60 rows=324082265 width=12)
+                                             Filter: (l_shipdate > '1995-03-14'::date)
+                                       ->  Hash  (cost=5402725.71..5402725.71 rows=4219626 width=12)
+                                             ->  Hash Join  (cost=497243.50..5402725.71 rows=4219626 width=12)
+                                                   Hash Cond: (orders.o_custkey = customer.c_custkey)
+                                                   ->  Seq Scan on orders  (cost=0.00..4407885.00 rows=72864151 width=16)
+                                                         Filter: (o_orderdate < '1995-03-14'::date)
+                                                   ->  Hash  (cost=459739.56..459739.56 rows=3000315 width=4)
+                                                         ->  Bitmap Heap Scan on customer  (cost=69468.63..459739.56 rows=3000315 width=4)
+                                                               Recheck Cond: (c_mktsegment = 'MACHINERY'::bpchar)
+                                                               ->  Bitmap Index Scan on customer_c_mktsegment_c_custkey_idx  (cost=0.00..68718.55 rows=3000315 width=0)
+                                                                     Index Cond: (c_mktsegment = 'MACHINERY'::bpchar)
+(23 rows)
+
+COMMIT;
+COMMIT

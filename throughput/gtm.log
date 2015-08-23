@@ -1,0 +1,112 @@
+1:140097805539136:2015-08-22 12:57:51.004 EDT -LOG:  Starting GTM server at (*:6666) -- control file /home/mark/stuff/dbt3/pgdata/gtm/gtm.control
+LOCATION:  main, main.c:626
+1:140097805539136:2015-08-22 12:57:51.005 EDT -LOG:  Restoring last GXID to 31083
+	
+LOCATION:  GTM_RestoreTxnInfo, gtm_txn.c:2744
+1:140097805539136:2015-08-22 12:57:51.005 EDT -LOG:  Started to run as GTM-Active.
+LOCATION:  main, main.c:700
+1:140097772033792:2015-08-22 12:57:51.358 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140097772033792:2015-08-22 12:57:51.358 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140097404008192:2015-08-22 12:57:51.529 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140097404008192:2015-08-22 12:57:51.529 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140097378830080:2015-08-22 12:57:51.706 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140097378830080:2015-08-22 12:57:51.706 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140097353651968:2015-08-22 12:57:51.875 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140097353651968:2015-08-22 12:57:51.875 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140096783243008:2015-08-22 12:57:52.055 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140096783243008:2015-08-22 12:57:52.055 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140096758064896:2015-08-22 12:57:52.224 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140096758064896:2015-08-22 12:57:52.224 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140096254764800:2015-08-22 12:57:52.394 EDT -LOG:  Node with the given ID number already exists - one 0:1
+LOCATION:  pgxcnode_add_info, register_common.c:257
+1:140096254764800:2015-08-22 12:57:52.394 EDT -ERROR:  Failed to Register node
+LOCATION:  ProcessPGXCNodeRegister, register_gtm.c:170
+1:140096229586688:2015-08-22 12:58:02.251 EDT -LOG:  Saving transaction restoration info, backed-up gxid: 33088
+LOCATION:  GTM_WriteRestorePointXid, gtm_txn.c:2777
+1:140096229586688:2015-08-22 12:58:04.549 EDT -LOG:  Saving transaction info - next_gxid: 31132
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140096229586688:2015-08-22 13:24:41.466 EDT -LOG:  Saving transaction info - next_gxid: 32064
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140095684323072:2015-08-22 13:25:04.812 EDT -LOG:  Saving transaction info - next_gxid: 32085
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140096229586688:2015-08-22 13:48:56.742 EDT -LOG:  Saving transaction info - next_gxid: 32619
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140095726286592:2015-08-22 14:10:47.258 EDT -LOG:  Saving transaction info - next_gxid: 33086
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140095726286592:2015-08-22 14:10:47.278 EDT -LOG:  Saving transaction restoration info, backed-up gxid: 35092
+LOCATION:  GTM_WriteRestorePointXid, gtm_txn.c:2777
+1:140096229586688:2015-08-22 14:17:19.467 EDT -LOG:  Saving transaction info - next_gxid: 33272
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140096229586688:2015-08-22 14:46:21.762 EDT -LOG:  Saving transaction info - next_gxid: 33930
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140096212801280:2015-08-22 14:52:52.960 EDT -LOG:  Saving transaction info - next_gxid: 34087
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140096229586688:2015-08-22 15:16:48.793 EDT -LOG:  Saving transaction info - next_gxid: 34591
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+1:140095692715776:2015-08-22 15:17:36.360 EDT -LOG:  Inside ProcessBeginTransactionGetGXIDAutovacuumCommand
+LOCATION:  ProcessBeginTransactionGetGXIDAutovacuumCommand, gtm_txn.c:1525
+1:140095692715776:2015-08-22 15:17:36.360 EDT -LOG:  Sending transaction id 34616
+LOCATION:  ProcessBeginTransactionGetGXIDAutovacuumCommand, gtm_txn.c:1552
+1:140097788819200:2015-08-22 15:35:14.030 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097780426496:2015-08-22 15:35:14.030 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097772033792:2015-08-22 15:35:15.204 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140097763641088:2015-08-22 15:35:15.205 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097755248384:2015-08-22 15:35:15.205 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097404008192:2015-08-22 15:35:16.385 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140097387222784:2015-08-22 15:35:16.386 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097395615488:2015-08-22 15:35:16.386 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097378830080:2015-08-22 15:35:17.561 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140097370437376:2015-08-22 15:35:17.562 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097362044672:2015-08-22 15:35:17.562 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097353651968:2015-08-22 15:35:18.736 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140096800028416:2015-08-22 15:35:18.737 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096791635712:2015-08-22 15:35:18.737 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096783243008:2015-08-22 15:35:19.915 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140096774850304:2015-08-22 15:35:19.917 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096766457600:2015-08-22 15:35:19.917 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096758064896:2015-08-22 15:35:21.095 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140096749672192:2015-08-22 15:35:21.096 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096263157504:2015-08-22 15:35:21.096 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096254764800:2015-08-22 15:35:22.270 EDT -ERROR:  Failed to Unregister node
+LOCATION:  ProcessPGXCNodeUnregister, register_gtm.c:288
+1:140096246372096:2015-08-22 15:35:22.271 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140096237979392:2015-08-22 15:35:22.271 EDT -LOG:  unexpected EOF on client connection
+LOCATION:  ReadCommand, main.c:1481
+1:140097805539136:2015-08-22 15:35:23.271 EDT -LOG:  GTM shutting down.
+LOCATION:  ServerLoop, main.c:884
+1:140097805539136:2015-08-22 15:35:23.271 EDT -LOG:  Saving transaction info - next_gxid: 34971
+LOCATION:  GTM_SaveTxnInfo, gtm_txn.c:2760
+Received signal 2

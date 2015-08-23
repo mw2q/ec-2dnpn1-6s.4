@@ -1,0 +1,175 @@
+2015-08-22 11:31:17 EDT [4472]: [1-1] user=,db=,app=,client= LOG:  database system was shut down at 2015-08-22 05:30:54 EDT
+2015-08-22 11:31:17 EDT [4472]: [2-1] user=,db=,app=,client= LOG:  MultiXact member wraparound protections are now enabled
+2015-08-22 11:31:17 EDT [4471]: [1-1] user=,db=,app=,client= LOG:  database system is ready to accept connections
+2015-08-22 11:31:17 EDT [4477]: [1-1] user=,db=,app=,client= LOG:  autovacuum launcher started
+2015-08-22 11:31:48 EDT [4503]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:31:49 EDT [4502]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 WARNING:  Expected to see a snapshot sent by the coordinator  - now taking a direct snapshot from GTM
+2015-08-22 11:32:49 EDT [4521]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:33:39 EDT [4535]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 WARNING:  Expected to see a snapshot sent by the coordinator  - now taking a direct snapshot from GTM
+2015-08-22 11:36:16 EDT [4509]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  sending cancel to blocking autovacuum PID 4553
+2015-08-22 11:36:16 EDT [4509]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process 4509 waits for ShareLock on relation 16814 of database 16392.
+2015-08-22 11:36:16 EDT [4509]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX part_p_size_idx
+	ON part(p_size);
+2015-08-22 11:36:16 EDT [4509]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4509 still waiting for ShareLock on relation 16814 of database 16392 after 1000.165 ms
+2015-08-22 11:36:16 EDT [4509]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process holding the lock: 4553. Wait queue: 4509.
+2015-08-22 11:36:16 EDT [4509]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX part_p_size_idx
+	ON part(p_size);
+2015-08-22 11:36:16 EDT [4553]: [1-1] user=,db=,app=,client= ERROR:  canceling autovacuum task
+2015-08-22 11:36:16 EDT [4553]: [2-1] user=,db=,app=,client= CONTEXT:  automatic analyze of table "dbt3.public.part"
+2015-08-22 11:36:16 EDT [4509]: [7-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4509 acquired ShareLock on relation 16814 of database 16392 after 1000.304 ms
+2015-08-22 11:36:16 EDT [4509]: [8-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX part_p_size_idx
+	ON part(p_size);
+2015-08-22 11:36:17 EDT [4474]: [1-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 11:37:39 EDT [4474]: [2-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 53848 buffers (5.1%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=75.793 s, sync=5.019 s, total=81.158 s; sync files=51, longest=3.544 s, average=0.098 s; distance=3152020 kB, estimate=3152020 kB
+2015-08-22 11:39:49 EDT [4593]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:40:49 EDT [4609]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:41:17 EDT [4474]: [3-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 11:41:49 EDT [4616]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:42:12 EDT [4474]: [4-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 23900 buffers (2.3%); 0 transaction log file(s) added, 0 removed, 193 recycled; write=50.985 s, sync=2.955 s, total=54.397 s; sync files=43, longest=1.635 s, average=0.068 s; distance=3062273 kB, estimate=3143046 kB
+2015-08-22 11:42:49 EDT [4623]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:43:53 EDT [4555]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  could not receive data from client: Connection reset by peer
+2015-08-22 11:43:55 EDT [4554]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  sending cancel to blocking autovacuum PID 4630
+2015-08-22 11:43:55 EDT [4554]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process 4554 waits for ShareLock on relation 16817 of database 16392.
+2015-08-22 11:43:55 EDT [4554]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX partsupp_ps_suppkey_idx
+	ON partsupp (ps_suppkey) ;
+2015-08-22 11:43:55 EDT [4554]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4554 still waiting for ShareLock on relation 16817 of database 16392 after 1000.151 ms
+2015-08-22 11:43:55 EDT [4554]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process holding the lock: 4630. Wait queue: 4554.
+2015-08-22 11:43:55 EDT [4554]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX partsupp_ps_suppkey_idx
+	ON partsupp (ps_suppkey) ;
+2015-08-22 11:43:55 EDT [4630]: [1-1] user=,db=,app=,client= ERROR:  canceling autovacuum task
+2015-08-22 11:43:55 EDT [4630]: [2-1] user=,db=,app=,client= CONTEXT:  automatic analyze of table "dbt3.public.partsupp"
+2015-08-22 11:43:55 EDT [4554]: [7-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4554 acquired ShareLock on relation 16817 of database 16392 after 1000.259 ms
+2015-08-22 11:43:55 EDT [4554]: [8-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX partsupp_ps_suppkey_idx
+	ON partsupp (ps_suppkey) ;
+2015-08-22 11:44:22 EDT [4528]: [1-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  sending cancel to blocking autovacuum PID 4623
+2015-08-22 11:44:22 EDT [4528]: [2-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process 4528 waits for ShareLock on relation 16820 of database 16392.
+2015-08-22 11:44:22 EDT [4528]: [3-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX customer_c_phone_idx_c_acctbal
+	ON customer (substr(c_phone::text, 1, 2))
+	WHERE c_acctbal > 0.00;
+2015-08-22 11:44:22 EDT [4528]: [4-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4528 still waiting for ShareLock on relation 16820 of database 16392 after 1000.290 ms
+2015-08-22 11:44:22 EDT [4528]: [5-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process holding the lock: 4623. Wait queue: 4528.
+2015-08-22 11:44:22 EDT [4528]: [6-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX customer_c_phone_idx_c_acctbal
+	ON customer (substr(c_phone::text, 1, 2))
+	WHERE c_acctbal > 0.00;
+2015-08-22 11:44:22 EDT [4623]: [2-1] user=,db=,app=,client= ERROR:  canceling autovacuum task
+2015-08-22 11:44:22 EDT [4623]: [3-1] user=,db=,app=,client= CONTEXT:  automatic analyze of table "dbt3.public.customer"
+2015-08-22 11:44:22 EDT [4528]: [7-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4528 acquired ShareLock on relation 16820 of database 16392 after 1002.335 ms
+2015-08-22 11:44:22 EDT [4528]: [8-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX customer_c_phone_idx_c_acctbal
+	ON customer (substr(c_phone::text, 1, 2))
+	WHERE c_acctbal > 0.00;
+2015-08-22 11:44:48 EDT [4638]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:45:26 EDT [4528]: [9-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  sending cancel to blocking autovacuum PID 4630
+2015-08-22 11:45:26 EDT [4528]: [10-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process 4528 waits for ShareLock on relation 16823 of database 16392.
+2015-08-22 11:45:26 EDT [4528]: [11-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX orders_o_orderdate_o_orderkey_idx
+	ON orders (o_orderdate, o_orderkey);
+2015-08-22 11:45:26 EDT [4528]: [12-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4528 still waiting for ShareLock on relation 16823 of database 16392 after 1003.171 ms
+2015-08-22 11:45:26 EDT [4528]: [13-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 DETAIL:  Process holding the lock: 4630. Wait queue: 4528, 4554.
+2015-08-22 11:45:26 EDT [4528]: [14-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX orders_o_orderdate_o_orderkey_idx
+	ON orders (o_orderdate, o_orderkey);
+2015-08-22 11:45:26 EDT [4630]: [3-1] user=,db=,app=,client= ERROR:  canceling autovacuum task
+2015-08-22 11:45:26 EDT [4630]: [4-1] user=,db=,app=,client= CONTEXT:  automatic analyze of table "dbt3.public.orders"
+2015-08-22 11:45:26 EDT [4528]: [15-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 LOG:  process 4528 acquired ShareLock on relation 16823 of database 16392 after 1007.911 ms
+2015-08-22 11:45:26 EDT [4528]: [16-1] user=mark,db=dbt3,app=pgxc,client=10.93.131.148 STATEMENT:  
+	CREATE INDEX orders_o_orderdate_o_orderkey_idx
+	ON orders (o_orderdate, o_orderkey);
+2015-08-22 11:45:53 EDT [4645]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:46:17 EDT [4474]: [5-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 11:46:48 EDT [4652]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:47:48 EDT [4661]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:48:41 EDT [4474]: [6-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 248320 buffers (23.7%); 0 transaction log file(s) added, 0 removed, 187 recycled; write=136.312 s, sync=2.509 s, total=144.148 s; sync files=43, longest=1.237 s, average=0.058 s; distance=2584532 kB, estimate=3087194 kB
+2015-08-22 11:48:48 EDT [4668]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:49:48 EDT [4675]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:50:48 EDT [4692]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:51:17 EDT [4474]: [7-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 11:51:37 EDT [4474]: [8-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 2165 buffers (0.2%); 0 transaction log file(s) added, 0 removed, 157 recycled; write=19.072 s, sync=0.622 s, total=19.775 s; sync files=27, longest=0.228 s, average=0.023 s; distance=2098799 kB, estimate=2988355 kB
+2015-08-22 11:51:48 EDT [4701]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:52:48 EDT [4708]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:53:48 EDT [4715]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:53:48 EDT [4715]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:53:48 EDT [4715]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 11:54:48 EDT [4722]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:54:48 EDT [4722]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:54:48 EDT [4722]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_2"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:55:49 EDT [4729]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:55:49 EDT [4729]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:56:17 EDT [4474]: [9-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 11:56:38 EDT [4474]: [10-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 2310 buffers (0.2%); 0 transaction log file(s) added, 0 removed, 128 recycled; write=20.177 s, sync=0.865 s, total=21.095 s; sync files=13, longest=0.845 s, average=0.066 s; distance=2120033 kB, estimate=2901522 kB
+2015-08-22 11:56:48 EDT [4736]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:56:48 EDT [4736]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:57:48 EDT [4743]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:57:48 EDT [4743]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:58:48 EDT [4750]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:58:48 EDT [4750]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 11:59:48 EDT [4757]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 11:59:48 EDT [4757]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:00:48 EDT [4772]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:00:48 EDT [4772]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:01:17 EDT [4474]: [11-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:01:37 EDT [4474]: [12-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 2126 buffers (0.2%); 0 transaction log file(s) added, 0 removed, 130 recycled; write=18.670 s, sync=0.481 s, total=19.359 s; sync files=4, longest=0.473 s, average=0.120 s; distance=2139386 kB, estimate=2825309 kB
+2015-08-22 12:01:48 EDT [4799]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:01:48 EDT [4799]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:02:54 EDT [4808]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:02:54 EDT [4808]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:03:58 EDT [4477]: [2-1] user=,db=,app=,client= LOG:  using stale statistics instead of current ones because stats collector is not responding
+2015-08-22 12:03:59 EDT [4815]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:03:59 EDT [4815]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:04:09 EDT [4815]: [3-1] user=,db=,app=,client= LOG:  using stale statistics instead of current ones because stats collector is not responding
+2015-08-22 12:04:19 EDT [4815]: [4-1] user=,db=,app=,client= LOG:  using stale statistics instead of current ones because stats collector is not responding
+2015-08-22 12:04:37 EDT [4821]: [1-1] user=,db=,app=,client= LOG:  using stale statistics instead of current ones because stats collector is not responding
+2015-08-22 12:04:48 EDT [4822]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:04:48 EDT [4822]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:05:48 EDT [4829]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:05:48 EDT [4829]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:06:17 EDT [4474]: [13-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:06:48 EDT [4837]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:06:48 EDT [4837]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:07:48 EDT [4844]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:07:48 EDT [4844]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:08:58 EDT [4477]: [3-1] user=,db=,app=,client= LOG:  using stale statistics instead of current ones because stats collector is not responding
+2015-08-22 12:09:07 EDT [4853]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:09:07 EDT [4853]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:09:07 EDT [4853]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:09:07 EDT [4474]: [14-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 16466 buffers (1.6%); 0 transaction log file(s) added, 0 removed, 130 recycled; write=149.438 s, sync=5.396 s, total=170.304 s; sync files=32, longest=1.589 s, average=0.168 s; distance=433342 kB, estimate=2586112 kB
+2015-08-22 12:09:48 EDT [4862]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:09:48 EDT [4862]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:09:48 EDT [4862]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:10:48 EDT [4877]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:10:48 EDT [4877]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:10:48 EDT [4877]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_2"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:10:48 EDT [4877]: [4-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:11:17 EDT [4474]: [15-1] user=,db=,app=,client= LOG:  checkpoint starting: time
+2015-08-22 12:11:48 EDT [4885]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:11:48 EDT [4885]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:11:48 EDT [4885]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_2"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:11:48 EDT [4885]: [4-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:12:48 EDT [4892]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:12:48 EDT [4892]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:12:48 EDT [4892]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_2"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:12:48 EDT [4892]: [4-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:13:13 EDT [4474]: [16-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 1165 buffers (0.1%); 0 transaction log file(s) added, 20 removed, 7 recycled; write=115.986 s, sync=0.011 s, total=116.041 s; sync files=12, longest=0.008 s, average=0.000 s; distance=3564 kB, estimate=2327857 kB
+2015-08-22 12:13:48 EDT [4899]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:13:48 EDT [4899]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:13:48 EDT [4899]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_2"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:13:48 EDT [4899]: [4-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:14:48 EDT [4906]: [1-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_4"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:14:48 EDT [4906]: [2-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_22"."tmp_orderkey3" in database "dbt3"
+2015-08-22 12:14:48 EDT [4906]: [3-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_2"."tmp_orderkey4" in database "dbt3"
+2015-08-22 12:14:48 EDT [4906]: [4-1] user=,db=,app=,client= LOG:  autovacuum: found orphan temp table "pg_temp_3"."tmp_orderkey6" in database "dbt3"
+2015-08-22 12:15:05 EDT [4471]: [2-1] user=,db=,app=,client= LOG:  received fast shutdown request
+2015-08-22 12:15:05 EDT [4471]: [3-1] user=,db=,app=,client= LOG:  aborting any active transactions
+2015-08-22 12:15:05 EDT [4477]: [4-1] user=,db=,app=,client= LOG:  autovacuum launcher shutting down
+2015-08-22 12:15:05 EDT [4474]: [17-1] user=,db=,app=,client= LOG:  shutting down
+2015-08-22 12:15:05 EDT [4474]: [18-1] user=,db=,app=,client= LOG:  checkpoint starting: shutdown immediate
+2015-08-22 12:15:05 EDT [4474]: [19-1] user=,db=,app=,client= LOG:  checkpoint complete: wrote 87 buffers (0.0%); 0 transaction log file(s) added, 0 removed, 0 recycled; write=0.013 s, sync=0.011 s, total=0.030 s; sync files=10, longest=0.004 s, average=0.001 s; distance=581 kB, estimate=2095130 kB
+2015-08-22 12:15:05 EDT [4474]: [20-1] user=,db=,app=,client= LOG:  database system is shut down

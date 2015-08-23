@@ -1,0 +1,45 @@
+BEGIN;
+BEGIN
+EXPLAIN
+select
+	sum(l_extendedprice) / 7.0 as avg_yearly
+from
+	lineitem,
+	part
+where
+	p_partkey = l_partkey
+	and p_brand = 'Brand#23'
+	and p_container = 'WRAP CASE'
+	and l_quantity < (
+		select
+			0.2 * avg(l_quantity)
+		from
+			lineitem
+		where
+			l_partkey = p_partkey
+	);
+                                                                                                         QUERY PLAN                                                                                                         
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=795379.28..795379.29 rows=1 width=4)
+   ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1,datanode_3_1,datanode_4_1,datanode_5_1,datanode_6_1,datanode_7_1,datanode_8_1)  (cost=717.22..795302.02 rows=30904 width=4)
+         ->  Aggregate  (cost=717.22..795302.02 rows=1 width=4)
+               ->  Nested Loop  (cost=717.22..795302.02 rows=30904 width=4)
+                     ->  Bitmap Heap Scan on part  (cost=692.71..66081.05 rows=19953 width=4)
+                           Recheck Cond: ((p_container = 'WRAP CASE'::bpchar) AND (p_brand = 'Brand#23'::bpchar))
+                           ->  Bitmap Index Scan on part_p_container_p_brand_p_partkey_idx  (cost=0.00..687.72 rows=19953 width=0)
+                                 Index Cond: ((p_container = 'WRAP CASE'::bpchar) AND (p_brand = 'Brand#23'::bpchar))
+                     ->  Materialize  (cost=124.51..136.57 rows=2 width=12)
+                           ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1,datanode_3_1,datanode_4_1,datanode_5_1,datanode_6_1,datanode_7_1,datanode_8_1)  (cost=124.51..136.56 rows=2 width=12)
+                                 Distribute results by H: l_partkey
+                                 ->  Index Scan using lineitem_l_partkey_l_quantity_l_shipmode_idx on lineitem  (cost=24.51..36.53 rows=2 width=12)
+                                       Index Cond: ((l_partkey = part.p_partkey) AND (l_quantity < (SubPlan 1)))
+                                       SubPlan 1
+                                         ->  Aggregate  (cost=24.30..24.31 rows=1 width=4)
+                                               ->  Remote Subquery Scan on all (datanode_1_1,datanode_2_1,datanode_3_1,datanode_4_1,datanode_5_1,datanode_6_1,datanode_7_1,datanode_8_1)  (cost=0.20..24.29 rows=5 width=4)
+                                                     ->  Aggregate  (cost=0.20..24.29 rows=1 width=4)
+                                                           ->  Index Only Scan using lineitem_l_partkey_l_quantity_l_shipmode_idx on lineitem lineitem_1  (cost=0.20..24.29 rows=5 width=4)
+                                                                 Index Cond: (l_partkey = part.p_partkey)
+(19 rows)
+
+COMMIT;
+COMMIT
